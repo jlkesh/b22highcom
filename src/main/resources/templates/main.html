@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head(~{::title})}">
+    <title>Main Page</title>
+</head>
+<body>
+
+<section th:replace="~{fragments :: navbar}"></section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="/img/blog-1.jpg" style="width:100%" alt="" srcset="">
+        </div>
+        <div class="col-6">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet autem consectetur ducimus et
+                eum explicabo maxime molestiae molestias necessitatibus odio, optio quas quibusdam sit, suscipit tenetur
+                velit veritatis vero? Architecto assumenda cumque deserunt distinctio dolor in mollitia, nesciunt
+                obcaecati odio porro quam qui rem, repellendus unde vitae. Commodi dolores ipsum obcaecati optio
+                recusandae repudiandae temporibus! Ad, amet culpa enim, facere incidunt ipsum laboriosam laborum nihil
+                numquam pariatur perferendis perspiciatis provident quas quod reiciendis reprehenderit tenetur
+                laboriosam libero maiores nemo nobis nostrum obcaecati perferendis provident quae quaerat reiciendis
+                repellendus sit soluta ut vel, voluptas? A consequatur, culpa, cupiditate explicabo iusto magni minima
+                modi nobis obcaecati officiis quibusdam quos repellendus reprehenderit sapiente suscipit temporibus,
+                unde ut? Blanditiis doloremque eos impedit modi officiis omnis sed veritatis voluptas voluptates
+                voluptatum. Debitis ea magnam officia sed sequi! Mollitia nihil vel velit. Accusantium aliquam aliquid
+                consectetur, error excepturi id itaque laudantium, natus nesciunt obcaecati officia quas qui, tempore
+                temporibus velit. Cum illum impedit neque sequi.</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="row">
+        <div class="col-4 p-2">
+            <div class="card" th:each="article : ${articles}" th:object="${article}">
+                <img th:src="@{/files/{filename}(filename=*{pic.generatedName})}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="*{title}"></h5>
+                    <p class="card-text" th:text="*{overview}"></p>
+                    <img src="/img/profile.jpg" class="article_author_pic"/><a href="#" class="link-info">Read</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<section th:replace="fragments :: js_links"></section>
+</body>
+</html>

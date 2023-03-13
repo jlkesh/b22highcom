@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <th:block th:replace="${title}"></th:block>
+</head>
+<body>
+
+
+<section th:fragment="navbar">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-lg-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create/article">Create Article</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            🌍 Language
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="?lang=uz">🇺🇿 O'zbek</a></li>
+                            <li><a class="dropdown-item" href="?lang=en_GB">🇬🇧 English GB</a></li>
+                            <li><a class="dropdown-item" href="?lang=en_US">🇺🇲 English US</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/auth/register" class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/auth/login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/auth/logout" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+
+<section th:fragment="js_links">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</section>
+</body>
+</html>
